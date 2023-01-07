@@ -1,5 +1,4 @@
 const express = require('express');
-const path = require('path');
 
 const cameraRoutes = require('./routes/camera');
 const teddyRoutes = require('./routes/teddy');
@@ -14,7 +13,6 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/images', express.static(path.join(__dirname, 'images')));
 app.use(express.static('images'));
 
 app.use(express.urlencoded({extended: true}));
